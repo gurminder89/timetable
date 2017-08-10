@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -15,8 +16,8 @@ import java.awt.Color;
 public class login {
 
 	private JFrame frmLogin;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtStudname;
+	private JTextField txtStudID;
 
 	/**
 	 * Launch the application.
@@ -62,19 +63,43 @@ public class login {
 		lblNewLabel_1.setBounds(65, 113, 98, 36);
 		frmLogin.getContentPane().add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(193, 51, 159, 20);
-		frmLogin.getContentPane().add(textField);
-		textField.setColumns(10);
+		txtStudname = new JTextField();
+		txtStudname.setBounds(193, 51, 159, 20);
+		frmLogin.getContentPane().add(txtStudname);
+		txtStudname.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(193, 122, 159, 20);
-		frmLogin.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		txtStudID = new JTextField();
+		txtStudID.setBounds(193, 122, 159, 20);
+		frmLogin.getContentPane().add(txtStudID);
+		txtStudID.setColumns(10);
 		
-		JButton btnLogin = new JButton("Login");
+		JButton btnLogin = new JButton("Log In");
+		
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				//write the condition here
+				if((txtStudname.getText().equals("gur")) && (txtStudID.getText().equals("123"))) {
+					JOptionPane.showMessageDialog(null, "Correct Credentials"); 
+					{
+					frmLogin.dispose();
+					Courses obj = new Courses();
+					obj.setVisible(true);
+					} 
+				}
+					else {
+						JOptionPane.showMessageDialog(null, "error");
+						{
+					}
+					
+				 
+				
+				//to make the current window disappear
+				
+				
+				//shifting to the next page
+				
+				
+					}
 			}
 		});
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
